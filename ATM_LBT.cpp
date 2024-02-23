@@ -34,7 +34,6 @@ int main(){
 			 << "Checkings: $" << checkings << endl
 			 << "Savings: $" << savings; 
 		}
-	
 	// Checks if the user typed in Option A 
 	if (userOption == 'A'){ 
 		cout << endl 
@@ -45,17 +44,18 @@ int main(){
 		* Checks if the user withdraw amount is valid by making sure is not
 		* less than zero, zero or greater than savings. */
 		if ((withdraw <= 0) || (withdraw > checkings)){
-				cout << "ERROR - INVALID WITHDRAW AMOUNT" << endl << endl 
-				     << "*** RECEIPT ***" << endl 
-					 << "Checkings: $" << checkings << endl << "Savings: $" << savings; 
+			cout << "ERROR - INVALID WITHDRAW AMOUNT" << endl << endl 
+				 << "*** RECEIPT ***" << endl 
+				 << "Checkings: $" << checkings << endl 
+				 << "Savings: $" << savings; 
 		}
 			
 		else {
-				checkings = checkings - withdraw; 
-				cout << endl << "DISPENSING: $" << withdraw << endl << endl
-				     << "*** RECEIPT ***" << endl 
-					 << "Checkings: $" << checkings << endl 
-					 << "Savings: $" << savings; 
+			checkings = checkings - withdraw; 
+			cout << endl << "DISPENSING: $" << withdraw << endl << endl
+				 << "*** RECEIPT ***" << endl 
+				 << "Checkings: $" << checkings << endl 
+				 << "Savings: $" << savings; 
 		}
 	}
 	
@@ -68,18 +68,18 @@ int main(){
 		* Checks if the user withdraw amount is valid by making sure is not
 		* less than zero, zero or greater than savings.*/
 		if  ((withdraw <= 0) || (withdraw > savings )){
-				cout << "ERROR - INVALID WITHDRAW AMOUNT" << endl << endl 
-				     << "*** RECEIPT ***" << endl 
-					 << "Checkings: $" << checkings << endl 
-					 << "Savings: $" << savings; 
+			cout << "ERROR - INVALID WITHDRAW AMOUNT" << endl << endl 
+				 << "*** RECEIPT ***" << endl 
+				 << "Checkings: $" << checkings << endl 
+				 << "Savings: $" << savings; 
 		}
 			
 		else {
-				savings = savings - withdraw;
-				cout << endl << "DISPENSING: $" << withdraw << endl << endl
-				     << "*** RECEIPT ***" << endl 
-					 << "Checkings: $" << checkings << endl 
-					 << "Savings: $" << savings; 
+			savings = savings - withdraw;
+			cout << endl << "DISPENSING: $" << withdraw << endl << endl
+				 << "*** RECEIPT ***" << endl 
+				 << "Checkings: $" << checkings << endl 
+				 << "Savings: $" << savings; 
 				
 			}
 	} 
@@ -95,7 +95,7 @@ int main(){
 		if (deposit <= 0){
 			cout << endl << "ERROR - INVALID DEPOSIT AMOUNT" << endl 
 			     << endl << "*** RECEIPT ***" << endl 
-				 << "Checkings: $" << checking << endl 
+				 << "Checkings: $" << checkings << endl 
 				 << "Savings: $" << savings; 
 		}
 		
@@ -118,7 +118,7 @@ int main(){
 		if (deposit <= 0){
 			cout << endl << "ERROR - INVALID DEPOSIT AMOUNT" << endl 
 			     << endl << "*** RECEIPT ***" << endl 
-				 << "Checkings: $" << checking << endl 
+				 << "Checkings: $" << checkings << endl 
 				 << "Savings: $" << savings; 
 		}
 		
