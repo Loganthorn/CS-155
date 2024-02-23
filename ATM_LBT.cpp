@@ -4,7 +4,8 @@
 // Assignment: Assignment 5
 // Date due: 02/23/2024
 // Resources: None 
-// Description: 
+// Description: A ATM program that deposits and withdraws money from an 
+//              account.
 // ------------------------------------------------------------------------
 
 #include <iostream>
@@ -18,47 +19,118 @@ int main(){
 	cout << "*** DEWEY, CHEATUM, & HOWE BANK ***" << endl 
 	     << "A - Withdraw from Checkings" << endl
 		 << "B - Withdraw from Savings" << endl
-		 << "C - Deposit to Checkings" << endl << "D - Deposit to Savings"
-		 << endl << "Enter: ";
+		 << "C - Deposit to Checkings" << endl
+		 << "D - Deposit to Savings" << endl 
+		 << "Enter: ";
 	cin >> userOption;
 	
 	cout << fixed << setprecision(2);
 	
+	// Checks if the user typed in a valid option.
 	if ((userOption != 'A') && (userOption != 'B') && 
 	   (userOption != 'C') && (userOption != 'D')) {
-		cout << endl << "ERROR - INVALID OPTION"  << endl << "Checkings: $" 
-			 << checkings << endl << "Savings: $" << savings; 
-	}
+		cout << endl << "ERROR - INVALID OPTION"  << endl << endl 
+			 << "*** RECEIPT ***" << endl 
+			 << "Checkings: $" << checkings << endl
+			 << "Savings: $" << savings; 
+		}
 	
+	// Checks if the user typed in Option A 
 	if (userOption == 'A'){ 
-		cout << endl << "How much will you Withdraw from Checkings: ";
+		cout << endl 
+			 << "How much do you want to Withdraw from Checkings: $";
 		cin >> withdraw;
-			if ((withdraw < 0) || (withdraw > checkings)){
-				cout << "ERROR - INVALID WITHDRAW AMOUNT" <<endl
+		
+		/*
+		* Checks if the user withdraw amount is valid by making sure is not
+		* less than zero, zero or greater than savings. */
+		if ((withdraw <= 0) || (withdraw > checkings)){
+				cout << "ERROR - INVALID WITHDRAW AMOUNT" << endl << endl 
+				     << "*** RECEIPT ***" << endl 
+					 << "Checkings: $" << checkings << endl << "Savings: $" << savings; 
+		}
+			
+		else {
+				checkings = checkings - withdraw; 
+				cout << endl << "DISPENSING: $" << withdraw << endl << endl
+				     << "*** RECEIPT ***" << endl 
 					 << "Checkings: $" << checkings << endl 
 					 << "Savings: $" << savings; 
-				}
-			else {
-				checkings = checkings - withdraw; 
-				cout << "Checkings: $" << checkings << endl << "Savings: $"
-					 << savings; 
-			}
 		}
+	}
+	
+	// Checks if the user typed in option B.
 	else if (userOption == 'B'){
-		cout << endl << "How much do you want to Withdraw from Savings: ";
+		cout << endl << "How much do you want to Withdraw from Savings: $";
 		cin >> withdraw;
-			if  ((withdraw < 0) || (withdraw > savings )){
-				cout << "ERROR - INVALID WITHDRAW AMOUNT" << endl
-				     << "Checkings: $" << checkings << endl << "Savings: $"
-				     << savings;
-			}
-			else {
+		
+		/*
+		* Checks if the user withdraw amount is valid by making sure is not
+		* less than zero, zero or greater than savings.*/
+		if  ((withdraw <= 0) || (withdraw > savings )){
+				cout << "ERROR - INVALID WITHDRAW AMOUNT" << endl << endl 
+				     << "*** RECEIPT ***" << endl 
+					 << "Checkings: $" << checkings << endl 
+					 << "Savings: $" << savings; 
+		}
+			
+		else {
 				savings = savings - withdraw;
-				cout << "Checkings: $" << checkings << endl << "Savings: $"
-					 << savings;
+				cout << endl << "DISPENSING: $" << withdraw << endl << endl
+				     << "*** RECEIPT ***" << endl 
+					 << "Checkings: $" << checkings << endl 
+					 << "Savings: $" << savings; 
 				
 			}
 	} 
+	
+	// Checks if the user typed in option C.
+	else if (userOption == 'C'){
+		cout << endl << "How much do you want to Deposit to Checkings: $";
+		cin >> deposit;
+		
+		/*
+		*Checks wether the users deposit amount is valid as making sure its
+		not zero or less than zero. */
+		if (deposit <= 0){
+			cout << endl << "ERROR - INVALID DEPOSIT AMOUNT" << endl 
+			     << endl << "*** RECEIPT ***" << endl 
+				 << "Checkings: $" << checking << endl 
+				 << "Savings: $" << savings; 
+		}
+		
+		else{
+			checkings =  checkings + deposit;
+			cout << endl << "DEPOSITING: $"<< deposit << endl << endl 
+				 << "*** RECEIPT ***" << endl << "Checkings: $" 
+				 << checkings << endl << "Savings: $" << savings; 
+		}
+	}
+	
+	// Checks if the user pickesd option D.
+	else if (userOption == 'D'){
+		cout << endl << "How much do you want to Deposit to Savings: $";
+		cin >> deposit;
+		
+		/*
+		* Checks wether the users deposit amount is valid as making sure 
+		its not zero or less than zero. */
+		if (deposit <= 0){
+			cout << endl << "ERROR - INVALID DEPOSIT AMOUNT" << endl 
+			     << endl << "*** RECEIPT ***" << endl 
+				 << "Checkings: $" << checking << endl 
+				 << "Savings: $" << savings; 
+		}
+		
+		else {
+			savings =  savings + deposit;
+			cout << endl << "DEPOSITING: $"<< deposit << endl << endl 
+				 << "*** RECEIPT ***" << endl 
+				 << "Checkings: $" << checkings << endl 
+				 << "Savings: $" << savings; 
+		}
+	}
+	
 	return 0; 
 }
 	
